@@ -211,7 +211,9 @@ Output of 6th steps would be like this
 6th, 7th and 9th row 9*9 would be like this after above steps
 
 | 3 1 2 | 6 4 5 | 9 7 8 |
+
 | 6 4 5 | 9 7 8 | 3 1 2 |
+
 | 9 7 8 | 3 1 2 | 6 4 5 |
 
 After 8th, 9th and 10th step, complete matrix of 9*9 would be look like as below,
