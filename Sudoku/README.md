@@ -10,26 +10,6 @@ The sub section 3\*3 matrix should contains all the numbers 1-9.
 
 Also, the number 1-9 should also appear once in row or column of 9\*9 matrix. 
 
-
-|   1   |	  2   |   3   |	  4   |	  5   | 	6   |	  7   |   8   |	  9   |
-
-|   4   |	  5   |	  6   |	  7	  |   8	  |   9   | 	1	  |   2 	|   3   |
-
-|   7	  |   8 	|   9 	|   1   | 	2   | 	3   |	  4	  |   5   | 	6   |
-
-|   2	  |   3	  |   1   | 	5   |	  6   | 	4   |	  8   |	  9   |	  7   |
-
-|   5   | 	6   | 	4   |	  8   |	  9   | 	7   |	  2   | 	3   | 	1   |
-
-|   8   | 	9   |	  7   |	  2   | 	3   |	  1   | 	5   | 	6   | 	4   |
-
-|   3   |	  1   |	  2   |	  6   |	  4   |	  5   | 	9   | 	7   | 	8   |
-
-|   6	  |   4   |	  5   |	  9   |	  7   | 	8   |	  3   |	  1   | 	2   |
-
-|   9   |	  7   | 	8   |	  3   | 	1   |	  2   | 	6   |	  4   |   5   |
-
-
 ### Steps to create the matrix - Means create Sudoku matrix using below simple algortithm
 
 put 1 - 9 number in each square sequencially in first row e.g. 1 2 3 4 5 6 7 8 9
