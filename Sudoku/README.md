@@ -1,4 +1,4 @@
-## Sudoku Algoritm from my view.
+## Sudoku Algoritm as i understood.
 
 As we know the rules of Sudoku problem or game
 
