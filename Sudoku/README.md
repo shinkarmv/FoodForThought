@@ -1,4 +1,4 @@
-## Sudoku Algoritm of my version.
+## Sudoku Algoritm from my view.
 
 As we know the rules of Sudoku problem or game
 
