@@ -2,13 +2,13 @@
 
 As we know the rules of Sudoku problem or game
 
-It is 9*9 matrix which has been divided in 3*3.
+It is 9\*9 matrix which has been divided in 3\*3.
 
 Rules of the game or problem are pretty simple.
 
-The sub section 3*3 matrix should contains all the numbers 1-9.
+The sub section 3\*3 matrix should contains all the numbers 1-9.
 
-Also, the number 1-9 should also appear once in row or column of 9*9 matrix. 
+Also, the number 1-9 should also appear once in row or column of 9\*9 matrix. 
 
 
 |   1   |	  2   |   3   |	  4   |	  5   | 	6   |	  7   |   8   |	  9   |
@@ -34,7 +34,7 @@ Also, the number 1-9 should also appear once in row or column of 9*9 matrix.
 
 put 1 - 9 number in each square sequencially in first row e.g. 1 2 3 4 5 6 7 8 9
 
-Then select 1st box of 3*3 matrix.
+Then select 1st box of 3\*3 matrix.
   * It should contains 1 2 3 in first row
   * put 4 5 6 in second row 
   * and 7 8 9 in third row
@@ -47,7 +47,7 @@ You will get
 
 7 8 9
 
-Then select 2nd horizantally consecutive 3*3 box.
+Then select 2nd horizantally consecutive 3\*3 box.
 
   * It should contains 4 5 6 in first row 
   * put 7 8 9 in second row 
@@ -61,7 +61,7 @@ You will get
 
 1 2 3
 
-Then select 2nd horizantally consecutive 3*3 box 
+Then select 2nd horizantally consecutive 3\*3 box 
 
 * It should contains 7 8 9 in first row 
 
@@ -76,7 +76,7 @@ You will get
 
 4 5 6
 
-After first 4 steps first three rows of 9*9 matrix will contain data as below,
+After first 4 steps first three rows of 9\*9 matrix will contain data as below,
 
 | 1 2 3 | 4 5 6 | 7 8 9 | 
 
@@ -85,12 +85,12 @@ After first 4 steps first three rows of 9*9 matrix will contain data as below,
 | 7 8 9 | 1 2 3 | 4 5 6 |
 
 
-5. In this step we have select the 3*3 box 
-This will start 4th row of 9*9 matrix
+5. In this step we have select the 3\*3 box 
+This will start 4th row of 9\*9 matrix
 
 Here we should start from
 
-* 2 3 1 in first row of selected 3*3
+* 2 3 1 in first row of selected 3\*3
 * 5 6 4 in second row
 * 8 9 7 in third row
 
@@ -102,7 +102,7 @@ then 3*3 box should contain values as below,
 
 8 9 7
 
-6. In this step we should select next horizantally consecutive 3*3 box
+6. In this step we should select next horizantally consecutive 3\*3 box
 
 Similar to 5th step, here we should start from 
 
@@ -118,7 +118,7 @@ Output of 6th steps would be like this
 
 2 3 1
 
-7. In this step we should select next horizantally consecutive 3*3 box
+7. In this step we should select next horizantally consecutive 3\*3 box
 
 Similar to 5th and 6th step, here we should start from 
 
@@ -134,7 +134,7 @@ Output of 6th steps would be like this
 
 5 6 4
 
-4th, 5th and 6th row 9*9 would be like this after above steps
+4th, 5th and 6th row 9\*9 would be like this after above steps
 
 | 7 8 9 | 1 2 3 | 4 5 6 |
 
@@ -142,7 +142,7 @@ Output of 6th steps would be like this
 
 | 5 6 4 | 8 9 7 | 2 3 1 |
 
-After the 7th step, complete matrix of 9*9 would be look like this
+After the 7th step, complete matrix of 9\*9 would be look like this
 
 | 1 2 3 | 4 5 6 | 7 8 9 | 
 
@@ -158,13 +158,13 @@ After the 7th step, complete matrix of 9*9 would be look like this
 
 
 
-8. In this step we have select next 3*3 box 
-This will start from 7th row of 9*9 matrix
+8. In this step we have select next 3\*3 box 
+This will start from 7th row of 9\*9 matrix
 
 
 Here we should start from
 
-* 3 1 2 in first row of selected 3*3
+* 3 1 2 in first row of selected 3\*3
 * 6 4 5 in second row
 * 9 7 8 in third row
 
@@ -176,7 +176,7 @@ then 3*3 box should contain values as below,
 
 9 7 8
 
-9. In this step we should select next horizantally consecutive 3*3 box
+9. In this step we should select next horizantally consecutive 3\*3 box
 
 Similar to 8th step, here we should start from 
 
@@ -192,7 +192,7 @@ Output of 6th steps would be like this
 
 3 1 2
 
-10. In this step we should select next horizantally consecutive 3*3 box
+10. In this step we should select next horizantally consecutive 3\*3 box
 
 Similar to 8th and 9h step, here we should start from 
 
@@ -208,7 +208,7 @@ Output of 6th steps would be like this
 
 6 4 5
 
-6th, 7th and 9th row 9*9 would be like this after above steps
+6th, 7th and 9th row 9\*9 would be like this after above steps
 
 | 3 1 2 | 6 4 5 | 9 7 8 |
 
@@ -216,7 +216,7 @@ Output of 6th steps would be like this
 
 | 9 7 8 | 3 1 2 | 6 4 5 |
 
-After 8th, 9th and 10th step, complete matrix of 9*9 would be look like as below,
+After 8th, 9th and 10th step, complete matrix of 9\*9 would be look like as below,
 
 | 1 2 3 | 4 5 6 | 7 8 9 | 
 
