@@ -41,31 +41,46 @@ and 7 8 9 in third row
 
 You will get 
 1 2 3 
+
 4 5 6 
+
 7 8 9
 
 Then select 2nd horizantally consecutive 3*3 box.
+
 It should contains 4 5 6 in first row 
+
 put 7 8 9 in second row 
+
 and 1 2 3 in third row
 
 You will get
+
 4 5 6 
+
 7 8 9 
+
 1 2 3
 
 Then select 2nd horizantally consecutive 3*3 box 
+
 It should contains 7 8 9 in first row 
+
 put 1 2 3 in second row 
+
 and 4 5 6 in third row
 
 You will get 
 7 8 9 
+
 1 2 3
+
 4 5 6
 
 After first 4 steps first three rows of 9*9 matrix will contain data as below,
 
 | 1 2 3 | 4 5 6 | 7 8 9 | 
+
 | 4 5 6 | 7 8 9 | 1 2 3 | 
+
 | 7 8 9 | 1 2 3 | 4 5 6 |
