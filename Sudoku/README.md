@@ -70,6 +70,6 @@ After first 4 steps first three rows of 9*9 matrix will contain data as below,
 | 1 2 3 | 4 5 6 | 7 8 9 |
 | 4 5 6 | 7 8 9 | 1 2 3 |
 | 7 8 9 | 1 2 3 | 4 5 6 |
-
+      
 
       
