@@ -1,4 +1,4 @@
-Sudoku Algoritm of my version.
+## Sudoku Algoritm of my version.
 
 As we know the rules of Sudoku problem or game
 
@@ -30,16 +30,17 @@ Also, the number 1-9 should also appear once in row or column of 9*9 matrix.
 |   9   |	  7   | 	8   |	  3   | 	1   |	  2   | 	6   |	  4   |   5   |
 
 
-Steps to create the matrix - Means create Sudoku matrix using below simple algortithm
+### Steps to create the matrix - Means create Sudoku matrix using below simple algortithm
 
 put 1 - 9 number in each square sequencially in first row e.g. 1 2 3 4 5 6 7 8 9
 
 Then select 1st box of 3*3 matrix.
-It should contains 1 2 3 in first row
-put 4 5 6 in second row 
-and 7 8 9 in third row
+  * It should contains 1 2 3 in first row
+  * put 4 5 6 in second row 
+  * and 7 8 9 in third row
 
 You will get 
+
 1 2 3 
 
 4 5 6 
@@ -48,11 +49,9 @@ You will get
 
 Then select 2nd horizantally consecutive 3*3 box.
 
-It should contains 4 5 6 in first row 
-
-put 7 8 9 in second row 
-
-and 1 2 3 in third row
+  * It should contains 4 5 6 in first row 
+  * put 7 8 9 in second row 
+  * and 1 2 3 in third row
 
 You will get
 
@@ -64,11 +63,11 @@ You will get
 
 Then select 2nd horizantally consecutive 3*3 box 
 
-It should contains 7 8 9 in first row 
+* It should contains 7 8 9 in first row 
 
-put 1 2 3 in second row 
+* put 1 2 3 in second row 
 
-and 4 5 6 in third row
+* and 4 5 6 in third row
 
 You will get 
 7 8 9 
