@@ -1,7 +1,9 @@
-﻿namespace ChessBoard
+﻿using System.Collections.Generic;
+
+namespace ChessBoard
 {
     interface IMovement
     {
-        void GetPossibleMoves();
+        List<string> GetPossibleMoves(IChessPiece chessPiece, string cellPostion);
     }
 }

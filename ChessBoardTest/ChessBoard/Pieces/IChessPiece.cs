@@ -1,6 +1,9 @@
 ﻿namespace ChessBoard
 {
-    interface IChessPiece
+    internal interface IChessPiece
     {
+        MovementDirection GetMoventDirection();
+
+        float GetStepLimit();
     }
 }

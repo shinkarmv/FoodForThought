@@ -1,10 +1,15 @@
-﻿namespace ChessBoard
+﻿[assembly: System.Runtime.CompilerServices.InternalsVisibleTo("ChessBoardTest")]
+namespace ChessBoard
 {
     internal enum MovementDirection
     {
-        Horizantal = 1,
-        Vertical = 2,
-        Diagonal = 4,
+        Horizantal,
+        Vertical,
+        Diagonal,
+        /// <summary>
+        /// Moves in both direction Vertically and Horizantally 
+        /// </summary>
+        BiDirectional = 4,
         All = 8
     }
 }
