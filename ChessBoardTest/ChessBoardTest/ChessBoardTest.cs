@@ -20,5 +20,24 @@ namespace ChessBoardTest
             // Assert
             Assert.DoesNotContain(cellPosition, possibleMoves);
         }
+
+
+        [Theory]
+        [InlineData("C4")]
+        [InlineData("D4")]
+        [InlineData("E4")]
+        [InlineData("H4")]
+        public void MakeNextMove_PawnChessPiece_PossibleCellPositions(string cellPosition)
+        {
+            // Arrange
+            ChessBoard.ChessBoard chessBoard = new ChessBoard.ChessBoard();
+            ChessBoard.Pawn pawn = new ChessBoard.Pawn();
+
+            // Act
+            var possibleMoves = chessBoard.MakeNextMove(pawn, cellPosition);
+
+            // Assert
+            Assert.DoesNotContain(cellPosition, possibleMoves);
+        }
     }
 }

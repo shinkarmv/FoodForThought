@@ -24,7 +24,8 @@ namespace ChessBoard
                     rightMove = cellAxis.Item2 + Convert.ToInt32(stepLimit);
                 }
 
-                verticalCell.Add(Cell.GetCell(cellAxis.Item1, leftMove));
+                if (chessPiece is Pawn == false)
+                    verticalCell.Add(Cell.GetCell(cellAxis.Item1, leftMove));
                 verticalCell.Add(Cell.GetCell(cellAxis.Item1, rightMove));
             }
             return verticalCell;
