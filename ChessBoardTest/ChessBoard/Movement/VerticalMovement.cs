@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace ChessBoard
 {
@@ -6,7 +7,27 @@ namespace ChessBoard
     {
         public List<string> GetPossibleMoves(IChessPiece chessPiece, string cellPostion)
         {
-            throw new System.NotImplementedException();
+            float stepLimit = chessPiece.GetStepLimit();
+            var cellAxis = Cell.GetCellAxisPostion(cellPostion);
+            List<string> verticalCell = new List<string>();
+            if (stepLimit == 1)
+            {
+                int leftMove = 1;
+                int rightMove = 1;
+                if (cellAxis.Item2 > 1)
+                {
+                    leftMove = cellAxis.Item2 - Convert.ToInt32(stepLimit);
+                }
+
+                if (cellAxis.Item2 < 8)
+                {
+                    rightMove = cellAxis.Item2 + Convert.ToInt32(stepLimit);
+                }
+
+                verticalCell.Add(Cell.GetCell(cellAxis.Item1, leftMove));
+                verticalCell.Add(Cell.GetCell(cellAxis.Item1, rightMove));
+            }
+            return verticalCell;
         }
     }
 }
