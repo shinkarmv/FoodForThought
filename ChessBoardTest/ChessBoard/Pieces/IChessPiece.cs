@@ -1,0 +1,6 @@
+﻿namespace ChessBoard
+{
+    interface IChessPiece
+    {
+    }
+}
