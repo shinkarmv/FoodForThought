@@ -1,16 +1,22 @@
-﻿namespace ChessBoard
+﻿using System.Collections.Generic;
+namespace ChessBoard
 {
     internal class Pawn : IChessPiece
     {
-        // As per the assumption mention in the problem statement - It cannot move Diagonally
-        public MovementDirection GetMoventDirection()
+        private readonly MovementDirection _movementDirection;
+        private readonly float _stepLimit;
+
+        public Pawn()
         {
-            return MovementDirection.Vertical;
+            // As per the assumption mention in the problem statement - It cannot move Diagonally
+            _movementDirection = MovementDirection.Vertical;
+            _stepLimit = 1;
         }
 
-        public float GetStepLimit()
+        public List<string> GetNextPossibleMoves(string fromCellPostion)
         {
-            return 1;
+            VerticalMovement verticalMovement = new VerticalMovement();
+            return verticalMovement.GetPossibleMoves(fromCellPostion, _stepLimit);
         }
     }
 }

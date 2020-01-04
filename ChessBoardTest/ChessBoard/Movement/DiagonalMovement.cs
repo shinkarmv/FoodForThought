@@ -5,9 +5,8 @@ namespace ChessBoard
 {
     internal class DiagonalMovement : IMovement
     {
-        public List<string> GetPossibleMoves(IChessPiece chessPiece, string cellPostion)
+        public List<string> GetPossibleMoves(string cellPostion, float stepLimit)
         {
-            float stepLimit = chessPiece.GetStepLimit();
             var cellAxis = Cell.GetCellAxisPostion(cellPostion);
             List<string> diagonalCell = new List<string>();
             if (stepLimit == 1)

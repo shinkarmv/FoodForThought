@@ -1,9 +1,9 @@
-﻿namespace ChessBoard
+﻿using System.Collections.Generic;
+
+namespace ChessBoard
 {
     internal interface IChessPiece
     {
-        MovementDirection GetMoventDirection();
-
-        float GetStepLimit();
+        List<string> GetNextPossibleMoves(string fromCellPostion);
     }
 }

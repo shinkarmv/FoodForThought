@@ -1,15 +1,21 @@
-﻿namespace ChessBoard
+﻿using System.Collections.Generic;
+
+namespace ChessBoard
 {
     internal class Horse : IChessPiece
     {
-        public MovementDirection GetMoventDirection()
+        private readonly MovementDirection _movementDirection;
+        private readonly float _stepLimit;
+
+        public Horse()
         {
-            return MovementDirection.BiDirectional;
+            _movementDirection = MovementDirection.BiDirectional;
+            _stepLimit = 2.5f;
         }
 
-        public float GetStepLimit()
+        public List<string> GetNextPossibleMoves(string fromCellPostion)
         {
-            return 2.5f;
+            throw new System.NotImplementedException();
         }
     }
 }

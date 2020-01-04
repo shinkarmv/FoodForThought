@@ -5,9 +5,8 @@ namespace ChessBoard
 {
     internal class VerticalMovement : IMovement
     {
-        public List<string> GetPossibleMoves(IChessPiece chessPiece, string cellPostion)
+        public List<string> GetPossibleMoves(string cellPostion, float stepLimit)
         {
-            float stepLimit = chessPiece.GetStepLimit();
             var cellAxis = Cell.GetCellAxisPostion(cellPostion);
             List<string> verticalCell = new List<string>();
             if (stepLimit == 1)
@@ -24,8 +23,8 @@ namespace ChessBoard
                     rightMove = cellAxis.Item2 + Convert.ToInt32(stepLimit);
                 }
 
-                if (chessPiece is Pawn == false)
-                    verticalCell.Add(Cell.GetCell(cellAxis.Item1, leftMove));
+                //if (chessPiece is Pawn == false)
+                //    verticalCell.Add(Cell.GetCell(cellAxis.Item1, leftMove));
                 verticalCell.Add(Cell.GetCell(cellAxis.Item1, rightMove));
             }
             return verticalCell;

@@ -1,15 +1,30 @@
-﻿namespace ChessBoard
+﻿using System.Collections.Generic;
+
+namespace ChessBoard
 {
     internal class Queen : IChessPiece
     {
-        public MovementDirection GetMoventDirection()
+        private readonly MovementDirection _movementDirection;
+        private readonly float _stepLimit;
+
+        public Queen()
         {
-            return MovementDirection.All;
+            _movementDirection = MovementDirection.All;
+            _stepLimit = 8;
         }
 
-        public float GetStepLimit()
+        public List<string> GetNextPossibleMoves(string fromCellPostion)
         {
-            return 8;
+            List<string> possibleMoves = new List<string>();
+            HorizantalMovement horizantalMovement = new HorizantalMovement();
+            possibleMoves.AddRange(horizantalMovement.GetPossibleMoves(fromCellPostion, _stepLimit));
+
+            VerticalMovement verticalMovement = new VerticalMovement();
+            possibleMoves.AddRange(verticalMovement.GetPossibleMoves(fromCellPostion, _stepLimit));
+
+            DiagonalMovement diagonalMovement = new DiagonalMovement();
+            possibleMoves.AddRange(diagonalMovement.GetPossibleMoves(fromCellPostion, _stepLimit));
+            return possibleMoves;
         }
     }
 }

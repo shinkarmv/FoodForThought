@@ -39,5 +39,60 @@ namespace ChessBoardTest
             // Assert
             Assert.DoesNotContain(cellPosition, possibleMoves);
         }
+
+        [Theory]
+        [InlineData("C4")]
+        [InlineData("D4")]
+        [InlineData("E4")]
+        [InlineData("H4")]
+        public void MakeNextMove_BishopChessPiece_PossibleCellPositions(string cellPosition)
+        {
+            // Arrange
+            ChessBoard.ChessBoard chessBoard = new ChessBoard.ChessBoard();
+            ChessBoard.Bishop bishop = new ChessBoard.Bishop();
+
+            // Act
+            var possibleMoves = chessBoard.MakeNextMove(bishop, cellPosition);
+
+            // Assert
+            Assert.DoesNotContain(cellPosition, possibleMoves);
+        }
+
+
+        [Theory]
+        [InlineData("C4")]
+        [InlineData("D4")]
+        [InlineData("E4")]
+        [InlineData("H4")]
+        public void MakeNextMove_RookChessPiece_PossibleCellPositions(string cellPosition)
+        {
+            // Arrange
+            ChessBoard.ChessBoard chessBoard = new ChessBoard.ChessBoard();
+            ChessBoard.Rook rook = new ChessBoard.Rook();
+
+            // Act
+            var possibleMoves = chessBoard.MakeNextMove(rook, cellPosition);
+
+            // Assert
+            Assert.DoesNotContain(cellPosition, possibleMoves);
+        }
+
+        [Theory]
+        [InlineData("C4")]
+        [InlineData("D4")]
+        [InlineData("E4")]
+        [InlineData("H4")]
+        public void MakeNextMove_QueenChessPiece_PossibleCellPositions(string cellPosition)
+        {
+            // Arrange
+            ChessBoard.ChessBoard chessBoard = new ChessBoard.ChessBoard();
+            ChessBoard.Queen queen = new ChessBoard.Queen();
+
+            // Act
+            var possibleMoves = chessBoard.MakeNextMove(queen, cellPosition);
+
+            // Assert
+            Assert.DoesNotContain(cellPosition, possibleMoves);
+        }
     }
 }

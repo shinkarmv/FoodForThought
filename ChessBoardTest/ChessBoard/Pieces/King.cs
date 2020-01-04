@@ -1,16 +1,31 @@
-﻿[assembly: System.Runtime.CompilerServices.InternalsVisibleTo("ChessBoardTest")]
+﻿using System.Collections.Generic;
+
+[assembly: System.Runtime.CompilerServices.InternalsVisibleTo("ChessBoardTest")]
 namespace ChessBoard
 {
     internal class King : IChessPiece
     {
-        public MovementDirection GetMoventDirection()
+        private readonly MovementDirection _movementDirection;
+        private readonly float _stepLimit;
+
+        public King()
         {
-            return MovementDirection.All;
+            _movementDirection = MovementDirection.All;
+            _stepLimit = 1;
         }
 
-        public float GetStepLimit()
+        public List<string> GetNextPossibleMoves(string fromCellPostion)
         {
-            return 1;
+            List<string> possibleMoves = new List<string>();
+            HorizantalMovement horizantalMovement = new HorizantalMovement();
+            possibleMoves.AddRange(horizantalMovement.GetPossibleMoves(fromCellPostion, _stepLimit));
+
+            VerticalMovement verticalMovement = new VerticalMovement();
+            possibleMoves.AddRange(verticalMovement.GetPossibleMoves(fromCellPostion, _stepLimit));
+
+            DiagonalMovement diagonalMovement = new DiagonalMovement();
+            possibleMoves.AddRange(diagonalMovement.GetPossibleMoves(fromCellPostion, _stepLimit));
+            return possibleMoves;
         }
     }
 }

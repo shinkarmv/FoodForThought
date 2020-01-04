@@ -1,14 +1,22 @@
-﻿namespace ChessBoard
+﻿using System.Collections.Generic;
+
+namespace ChessBoard
 {
     internal class Bishop : IChessPiece
     {
-        public MovementDirection GetMoventDirection()
+        private readonly MovementDirection _movementDirection;
+        private readonly float _stepLimit;
+
+        public Bishop()
         {
-            return MovementDirection.Diagonal;
+            _movementDirection = MovementDirection.Diagonal;
+            _stepLimit = 8;
         }
-        public float GetStepLimit()
+
+        public List<string> GetNextPossibleMoves(string fromCellPostion)
         {
-            return 8;
+            DiagonalMovement diagonalMovement = new DiagonalMovement();
+            return diagonalMovement.GetPossibleMoves(fromCellPostion, _stepLimit);
         }
     }
 }
