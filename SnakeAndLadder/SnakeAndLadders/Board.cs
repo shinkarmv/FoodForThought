@@ -27,102 +27,23 @@ namespace SnakeAndLadders
             return Snakes;
         }
 
-        public void Plot()
+        public void SetSize(Size size)
         {
-            InitializeBoardSize();
-            InitializeLadders();
-            InitializePlayers();
-            InitializeSnakes();
+            Size = size;
         }
-
         public void SetLadder(List<Ladder> ladders)
         {
-            throw new NotImplementedException();
+            Ladders = ladders;
         }
 
-        public void SetPlayers(Player player)
+        public void SetPlayer(Player player)
         {
-            throw new NotImplementedException();
+            Player = player;
         }
 
         public void SetSnakes(List<Snake> snakes)
         {
-            throw new NotImplementedException();
-        }
-
-        private void InitializeBoardSize()
-        {
-            Size = new Size
-            {
-                InitialPosition = 0,
-                FinalPosition = 100
-            };
-        }
-
-        private void InitializeLadders()
-        {
-            Ladders = new List<Ladder>
-            {
-                new Ladder
-                {
-                    Top = 7,
-                    Bottom = 33
-                },
-                new Ladder
-                {
-                    Top = 37,
-                    Bottom = 85
-                },
-                new Ladder
-                {
-                    Top = 51,
-                    Bottom = 72
-                },
-                new Ladder
-                {
-                    Top = 63,
-                    Bottom = 99
-                }
-            };
-        }
-
-        private void InitializeSnakes()
-        {
-            Snakes = new List<Snake>
-            {
-                new Snake
-                {
-                    Head = 36,
-                    Tail = 19
-                },
-                new Snake
-                {
-                    Head = 65,
-                    Tail = 35
-                },
-                new Snake
-                {
-                    Head = 87,
-                    Tail = 32
-                },
-                new Snake
-                {
-                    Head = 97,
-                    Tail = 21
-                }
-            };
-        }
-
-        private void InitializePlayers()
-        {
-            Player = new Player
-            {
-                
-                    Name = "TestPlayer",
-                    Id = Guid.NewGuid(),
-                    Position = 0
-                
-            };
+            Snakes = snakes;
         }
     }
 }

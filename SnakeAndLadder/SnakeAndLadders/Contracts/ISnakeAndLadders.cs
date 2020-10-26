@@ -5,6 +5,7 @@ namespace SnakeAndLadders.Contracts
 {
     public interface ISnakeAndLadders
     {
-        int Play();
+        void Plot();
+        int Play(int nextMove);
     }
 }

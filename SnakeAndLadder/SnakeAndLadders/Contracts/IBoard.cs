@@ -5,8 +5,6 @@ namespace SnakeAndLadders.Contracts
 {
     public interface IBoard
     {
-        void Plot();
-
         List<Ladder> GetLadders();
         List<Snake> GetSnakes();
         Player GetPlayer();
@@ -15,6 +13,8 @@ namespace SnakeAndLadders.Contracts
 
         void SetSnakes(List<Snake> snakes);
 
-        void SetPlayers(Player player);
+        void SetPlayer(Player player);
+
+        void SetSize(Size size);
     }
 }
