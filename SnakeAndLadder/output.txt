@@ -1,0 +1,519 @@
+Started the game
+
+Play the NextMove
+Dice outcome 6
+
+Player postioned at 6
+
+Play the NextMove
+Dice outcome 5
+
+Player postioned at 11
+
+Play the NextMove
+Dice outcome 1
+
+Player postioned at 12
+
+Play the NextMove
+Dice outcome 3
+
+Player postioned at 15
+
+Play the NextMove
+Dice outcome 3
+
+Player postioned at 18
+
+Play the NextMove
+Dice outcome 3
+
+Player postioned at 21
+
+Play the NextMove
+Dice outcome 2
+
+Player postioned at 23
+
+Play the NextMove
+Dice outcome 5
+
+Player postioned at 28
+
+Play the NextMove
+Dice outcome 2
+
+Player postioned at 30
+
+Play the NextMove
+Dice outcome 6
+
+Player eaten by snake
+
+Player postioned at 19
+
+Play the NextMove
+Dice outcome 5
+
+Player postioned at 24
+
+Play the NextMove
+Dice outcome 3
+
+Player postioned at 27
+
+Play the NextMove
+Dice outcome 1
+
+Player postioned at 28
+
+Play the NextMove
+Dice outcome 6
+
+Player postioned at 34
+
+Play the NextMove
+Dice outcome 3
+
+Player postioned at 37
+
+Play the NextMove
+Dice outcome 6
+
+Player postioned at 43
+
+Play the NextMove
+Dice outcome 2
+
+Player postioned at 45
+
+Play the NextMove
+Dice outcome 2
+
+Player postioned at 47
+
+Play the NextMove
+Dice outcome 3
+
+Player postioned at 50
+
+Play the NextMove
+Dice outcome 3
+
+Player postioned at 53
+
+Play the NextMove
+Dice outcome 3
+
+Player postioned at 56
+
+Play the NextMove
+Dice outcome 2
+
+Player postioned at 58
+
+Play the NextMove
+Dice outcome 3
+
+Player postioned at 61
+
+Play the NextMove
+Dice outcome 6
+
+Player postioned at 67
+
+Play the NextMove
+Dice outcome 6
+
+Player postioned at 73
+
+Play the NextMove
+Dice outcome 5
+
+Player postioned at 78
+
+Play the NextMove
+Dice outcome 5
+
+Player postioned at 83
+
+Play the NextMove
+Dice outcome 1
+
+Player postioned at 84
+
+Play the NextMove
+Dice outcome 4
+
+Player postioned at 88
+
+Play the NextMove
+Dice outcome 5
+
+Player postioned at 93
+
+Play the NextMove
+Dice outcome 4
+
+Player eaten by snake
+
+Player postioned at 21
+
+Play the NextMove
+Dice outcome 3
+
+Player postioned at 24
+
+Play the NextMove
+Dice outcome 6
+
+Player postioned at 30
+
+Play the NextMove
+Dice outcome 2
+
+Player postioned at 32
+
+Play the NextMove
+Dice outcome 1
+
+Player climbed up the ladder
+
+Player postioned at 7
+
+Play the NextMove
+Dice outcome 2
+
+Player postioned at 9
+
+Play the NextMove
+Dice outcome 6
+
+Player postioned at 15
+
+Play the NextMove
+Dice outcome 4
+
+Player postioned at 19
+
+Play the NextMove
+Dice outcome 1
+
+Player postioned at 20
+
+Play the NextMove
+Dice outcome 4
+
+Player postioned at 24
+
+Play the NextMove
+Dice outcome 5
+
+Player postioned at 29
+
+Play the NextMove
+Dice outcome 3
+
+Player postioned at 32
+
+Play the NextMove
+Dice outcome 4
+
+Player eaten by snake
+
+Player postioned at 19
+
+Play the NextMove
+Dice outcome 4
+
+Player postioned at 23
+
+Play the NextMove
+Dice outcome 1
+
+Player postioned at 24
+
+Play the NextMove
+Dice outcome 5
+
+Player postioned at 29
+
+Play the NextMove
+Dice outcome 4
+
+Player climbed up the ladder
+
+Player postioned at 7
+
+Play the NextMove
+Dice outcome 3
+
+Player postioned at 10
+
+Play the NextMove
+Dice outcome 5
+
+Player postioned at 15
+
+Play the NextMove
+Dice outcome 1
+
+Player postioned at 16
+
+Play the NextMove
+Dice outcome 2
+
+Player postioned at 18
+
+Play the NextMove
+Dice outcome 5
+
+Player postioned at 23
+
+Play the NextMove
+Dice outcome 4
+
+Player postioned at 27
+
+Play the NextMove
+Dice outcome 5
+
+Player postioned at 32
+
+Play the NextMove
+Dice outcome 1
+
+Player climbed up the ladder
+
+Player postioned at 7
+
+Play the NextMove
+Dice outcome 3
+
+Player postioned at 10
+
+Play the NextMove
+Dice outcome 6
+
+Player postioned at 16
+
+Play the NextMove
+Dice outcome 6
+
+Player postioned at 22
+
+Play the NextMove
+Dice outcome 2
+
+Player postioned at 24
+
+Play the NextMove
+Dice outcome 3
+
+Player postioned at 27
+
+Play the NextMove
+Dice outcome 3
+
+Player postioned at 30
+
+Play the NextMove
+Dice outcome 6
+
+Player eaten by snake
+
+Player postioned at 19
+
+Play the NextMove
+Dice outcome 6
+
+Player postioned at 25
+
+Play the NextMove
+Dice outcome 1
+
+Player postioned at 26
+
+Play the NextMove
+Dice outcome 1
+
+Player postioned at 27
+
+Play the NextMove
+Dice outcome 1
+
+Player postioned at 28
+
+Play the NextMove
+Dice outcome 2
+
+Player postioned at 30
+
+Play the NextMove
+Dice outcome 4
+
+Player postioned at 34
+
+Play the NextMove
+Dice outcome 5
+
+Player postioned at 39
+
+Play the NextMove
+Dice outcome 6
+
+Player postioned at 45
+
+Play the NextMove
+Dice outcome 4
+
+Player postioned at 49
+
+Play the NextMove
+Dice outcome 3
+
+Player postioned at 52
+
+Play the NextMove
+Dice outcome 6
+
+Player postioned at 58
+
+Play the NextMove
+Dice outcome 3
+
+Player postioned at 61
+
+Play the NextMove
+Dice outcome 3
+
+Player postioned at 64
+
+Play the NextMove
+Dice outcome 5
+
+Player postioned at 69
+
+Play the NextMove
+Dice outcome 2
+
+Player postioned at 71
+
+Play the NextMove
+Dice outcome 4
+
+Player postioned at 75
+
+Play the NextMove
+Dice outcome 4
+
+Player postioned at 79
+
+Play the NextMove
+Dice outcome 6
+
+Player climbed up the ladder
+
+Player postioned at 37
+
+Play the NextMove
+Dice outcome 5
+
+Player postioned at 42
+
+Play the NextMove
+Dice outcome 1
+
+Player postioned at 43
+
+Play the NextMove
+Dice outcome 1
+
+Player postioned at 44
+
+Play the NextMove
+Dice outcome 1
+
+Player postioned at 45
+
+Play the NextMove
+Dice outcome 2
+
+Player postioned at 47
+
+Play the NextMove
+Dice outcome 4
+
+Player postioned at 51
+
+Play the NextMove
+Dice outcome 4
+
+Player postioned at 55
+
+Play the NextMove
+Dice outcome 5
+
+Player postioned at 60
+
+Play the NextMove
+Dice outcome 6
+
+Player postioned at 66
+
+Play the NextMove
+Dice outcome 3
+
+Player postioned at 69
+
+Play the NextMove
+Dice outcome 1
+
+Player postioned at 70
+
+Play the NextMove
+Dice outcome 5
+
+Player postioned at 75
+
+Play the NextMove
+Dice outcome 1
+
+Player postioned at 76
+
+Play the NextMove
+Dice outcome 2
+
+Player postioned at 78
+
+Play the NextMove
+Dice outcome 6
+
+Player postioned at 84
+
+Play the NextMove
+Dice outcome 4
+
+Player postioned at 88
+
+Play the NextMove
+Dice outcome 2
+
+Player postioned at 90
+
+Play the NextMove
+Dice outcome 2
+
+Player postioned at 92
+
+Play the NextMove
+Dice outcome 2
+
+Player postioned at 94
+
+Play the NextMove
+Dice outcome 6
+
+Player postioned at 100
+
+Completed the game

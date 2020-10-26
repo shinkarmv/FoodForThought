@@ -9,7 +9,7 @@ namespace SnakeAndLadders.Contracts
         List<Snake> GetSnakes();
         Player GetPlayer();
 
-        void SetLadder(List<Ladder> ladders);
+        void SetLadders(List<Ladder> ladders);
 
         void SetSnakes(List<Snake> snakes);
 

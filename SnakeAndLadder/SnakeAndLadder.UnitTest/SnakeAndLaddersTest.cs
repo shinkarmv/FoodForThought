@@ -16,7 +16,7 @@ namespace SnakeAndLadder.UnitTest
             var board = new Mock<IBoard>();
 
             board.Setup(x => x.SetSize(InitializeSize()));
-            board.Setup(x => x.SetLadder(InitializeLadders(33, 7)));
+            board.Setup(x => x.SetLadders(InitializeLadders(33, 7)));
             board.Setup(x => x.SetPlayer(InitializePlayers(30)));
             board.Setup(x => x.SetSnakes(InitializeSnakes(36, 19)));
 
@@ -82,7 +82,7 @@ namespace SnakeAndLadder.UnitTest
             var board = new Mock<IBoard>();
 
             board.Setup(x => x.SetSize(InitializeSize()));
-            board.Setup(x => x.SetLadder(InitializeLadders(85, 33)));
+            board.Setup(x => x.SetLadders(InitializeLadders(85, 33)));
             board.Setup(x => x.SetPlayer(InitializePlayers(30)));
             board.Setup(x => x.SetSnakes(InitializeSnakes(36, 19)));
 
@@ -106,7 +106,7 @@ namespace SnakeAndLadder.UnitTest
             var board = new Mock<IBoard>();
 
             board.Setup(x => x.SetSize(InitializeSize()));
-            board.Setup(x => x.SetLadder(InitializeLadders(85, 33)));
+            board.Setup(x => x.SetLadders(InitializeLadders(85, 33)));
             board.Setup(x => x.SetPlayer(InitializePlayers(30)));
             board.Setup(x => x.SetSnakes(InitializeSnakes(36, 19)));
 
@@ -130,7 +130,7 @@ namespace SnakeAndLadder.UnitTest
             var board = new Mock<IBoard>();
 
             board.Setup(x => x.SetSize(InitializeSize()));
-            board.Setup(x => x.SetLadder(InitializeLadders(85, 52)));
+            board.Setup(x => x.SetLadders(InitializeLadders(85, 52)));
             board.Setup(x => x.SetPlayer(InitializePlayers(96)));
             board.Setup(x => x.SetSnakes(InitializeSnakes(99, 45)));
 

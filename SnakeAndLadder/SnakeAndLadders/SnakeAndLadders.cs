@@ -17,8 +17,8 @@ namespace SnakeAndLadders
         public void Plot()
         {
             _board.SetSize(InitializeBoardSize());
-            _board.SetPlayer(InitializePlayers());
-            _board.SetLadder(InitializeLadders());
+            _board.SetPlayer(InitializePlayer());
+            _board.SetLadders(InitializeLadders());
             _board.SetSnakes(InitializeSnakes());
         }
 
@@ -30,7 +30,7 @@ namespace SnakeAndLadders
                 FinalPosition = 100
             };
         }
-        private Player InitializePlayers()
+        private Player InitializePlayer()
         {
             return new Player
             {

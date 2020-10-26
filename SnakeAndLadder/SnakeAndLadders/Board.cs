@@ -31,7 +31,7 @@ namespace SnakeAndLadders
         {
             Size = size;
         }
-        public void SetLadder(List<Ladder> ladders)
+        public void SetLadders(List<Ladder> ladders)
         {
             Ladders = ladders;
         }
