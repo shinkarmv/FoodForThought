@@ -4,7 +4,7 @@ using System.Collections.Generic;
 namespace Assignment.TigerCard.Common
 {
     [Serializable]
-    public class ExceptionLog : LogBase
+    public class ExceptionLog : BaseLog
     {
         public override string Type { get; } = "exception";
         public string ExceptionType { get; set; }

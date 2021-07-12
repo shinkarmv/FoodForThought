@@ -6,8 +6,8 @@ namespace Assignment.TigerCard.Contracts
     public interface ILog
     {
         string Id { get; }
-        DateTime LogTime { get; }
-        IEnumerable<KeyValuePair<string, object>> GetFields();
+        DateTime TimeStamp { get; }
+        IEnumerable<KeyValuePair<string, object>> GetLogFields();
         string Type { get; }
         string Level { get; }
     }

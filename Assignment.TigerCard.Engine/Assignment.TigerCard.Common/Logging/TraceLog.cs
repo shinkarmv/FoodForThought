@@ -5,7 +5,7 @@ using System.Text;
 namespace Assignment.TigerCard.Common
 {
     [Serializable]
-    public class TraceLog : LogBase
+    public class TraceLog : BaseLog
     {
         public string Category { get; set; }
         public override string Type { get; } = "trace";
