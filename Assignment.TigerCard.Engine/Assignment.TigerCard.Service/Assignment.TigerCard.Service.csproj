@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FluentValidation" Version="10.2.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Assignment.TigerCard.Contracts\Assignment.TigerCard.Contracts.csproj" />
+    <ProjectReference Include="..\Assignment.TigerCard.Models\Assignment.TigerCard.Models.csproj" />
+  </ItemGroup>
+
+</Project>
