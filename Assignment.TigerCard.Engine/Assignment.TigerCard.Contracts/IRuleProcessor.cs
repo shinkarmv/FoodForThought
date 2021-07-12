@@ -1,12 +1,14 @@
 ﻿using Assignment.TigerCard.Models;
+using System;
+using System.Collections.Generic;
 
 namespace Assignment.TigerCard.Contracts
 {
     public interface IRuleProcessor
     {
-        void Cap();
+        bool Cap(List<JourneyDetails> journeyList);
 
-        Fare Peak(Window window, Zone boardingZone, Zone destinationZone);
+        Fare Peak(DateTime journeyDateTime, Zone boardingZone, Zone destinationZone);
 
     }
 }

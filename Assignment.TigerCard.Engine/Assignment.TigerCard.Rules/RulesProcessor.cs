@@ -1,17 +1,18 @@
 ﻿using Assignment.TigerCard.Contracts;
 using Assignment.TigerCard.Models;
 using System;
+using System.Collections.Generic;
 
 namespace Assignment.TigerCard.Rules
 {
     public class RulesProcessor : IRuleProcessor
     {
-        public void Cap()
+        public bool Cap(List<JourneyDetails> journeyList)
         {
-            throw new NotImplementedException();
+            return true;
         }
 
-        public Fare Peak(Window window, Zone boardingZone, Zone destinationZone)
+        public Fare Peak(DateTime journeyDateTime, Zone boardingZone, Zone destinationZone)
         {
             throw new NotImplementedException();
         }

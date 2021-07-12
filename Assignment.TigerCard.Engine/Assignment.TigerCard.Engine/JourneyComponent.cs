@@ -8,38 +8,28 @@ namespace Assignment.TigerCard.Engine
     {
         private readonly IRuleProcessor _ruleProcessor;
         private readonly IJouneryStoreProvider _jouneryStoreProvider;
-        private readonly IConfigurationProvider _configurationProvider;
         
-        public JourneyComponent(IRuleProcessor ruleProcessor, IJouneryStoreProvider jouneryStoreProvider, 
-            IConfigurationProvider configurationProvider)
+        public JourneyComponent(IRuleProcessor ruleProcessor, IJouneryStoreProvider jouneryStoreProvider)
         {
             _ruleProcessor = ruleProcessor;
             _jouneryStoreProvider = jouneryStoreProvider;
-            _configurationProvider = configurationProvider;
         }
         public Fare Commute(Criteria criteria, Card card)
         {
-            var journeyList = _jouneryStoreProvider.GetListOfJourneyDetails(card.Number);
-            _ruleProcessor.Cap();
-            var fare = _ruleProcessor.Peak(new Window
-                                            {
-                                                StartTime = criteria.StartTime,
-                                                EndTime = criteria.StartTime
-                                            },
-                                            criteria.Source, criteria.Destination);
-            JourneyDetails journeyDetails = PrepareJourneryDetails(criteria, fare);
-            _jouneryStoreProvider.SaveJourneyDetails(journeyDetails);
+            Fare fare = new Fare
+            {
+                Amount = 0.0m,
+                Description = "Cap Applicable"
+            };
+            var journeyList = _jouneryStoreProvider.GetListOfJourneyDetails(card.Number,  criteria.StartTime);
+            var isCapApplicable = _ruleProcessor.Cap(journeyList);
+            if (!isCapApplicable)
+            {
+                fare = _ruleProcessor.Peak(criteria.StartTime, criteria.Source, criteria.Destination);
+            }
+            _jouneryStoreProvider.SaveJourneyDetails(criteria, fare, card);
             return fare;
         }
 
-        private JourneyDetails PrepareJourneryDetails(Criteria criteria, Fare fare)
-        {
-            return new JourneyDetails
-            {
-                Criteria = criteria,
-                Fare = fare,
-                JourneyId = Guid.NewGuid().ToString()
-            };
-        }
     }
 }

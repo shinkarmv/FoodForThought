@@ -16,28 +16,16 @@ namespace Assignment.TigerCard.JourneyStore
         {
             _configurationProvider = configurationProvider;
         }
-        public JourneyDetails GetJourneyDetails(string journeyId, string tigerCardNumber)
-        {
-            var directoryPath = GetAssemblyDirectory() + _configurationProvider.GetGlobalSetting("details", "card-wise");
-            string fullPath = directoryPath + tigerCardNumber + "/" + journeyId;
-            var json = GetResourceTextFile(fullPath);
 
-            var response = JsonConvert.DeserializeObject<JourneyDetails>(json,
-                   GetJsonSerializerSettings());
-
-            return response;
-        }
-
-        public List<JourneyDetails> GetListOfJourneyDetails(string tigerCardNumber)
+        public List<JourneyDetails> GetListOfJourneyDetails(string tigerCardNumber, DateTime journeyDate)
         {
             List<JourneyDetails> journeyDetailList = new List<JourneyDetails>();
-            var directoryPath = GetAssemblyDirectory() + _configurationProvider.GetGlobalSetting("details", "card-wise");
-            string fullPath = directoryPath + tigerCardNumber;
+            string directoryPath = GetDirectoryPath(tigerCardNumber, journeyDate);
 
-            foreach (var item in Directory.GetFiles(fullPath))
+            foreach (var item in Directory.GetFiles(directoryPath))
             {
-                fullPath = fullPath + item;
-                var json = GetResourceTextFile(fullPath);
+                directoryPath += item;
+                var json = GetResourceTextFile(directoryPath);
 
                 var response = JsonConvert.DeserializeObject<JourneyDetails>(json,
                        GetJsonSerializerSettings());
@@ -45,21 +33,55 @@ namespace Assignment.TigerCard.JourneyStore
                 journeyDetailList.Add(response);
             }
 
-
             return journeyDetailList;
         }
 
-        public void SaveJourneyDetails(JourneyDetails journeyDetails)
+        public void SaveJourneyDetails(Criteria criteria, Fare fare, Card card)
+        {
+            JourneyDetails journeyDetails = PrepareJourneryDetails(criteria, fare, card);
+            string directoryPath = GetDirectoryPath(journeyDetails.Card.Number, journeyDetails.Criteria.StartTime);
+            var serializeJourneyDetails = SerializeJourneyDetailsToJsonString(journeyDetails);
+            string fileName = journeyDetails.JourneyId;
+            string fullPath = directoryPath + fileName;
+            File.WriteAllText(fullPath, serializeJourneyDetails);
+        }
+
+        private JourneyDetails PrepareJourneryDetails(Criteria criteria, Fare fare, Card card)
+        {
+            return new JourneyDetails
+            {
+                Criteria = criteria,
+                Fare = fare,
+                JourneyId = Guid.NewGuid().ToString(),
+                Card = card
+            };
+        }
+
+        private string GetDirectoryPath(string number, DateTime journeyDate)
         {
             var directoryPath = GetAssemblyDirectory() + _configurationProvider.GetGlobalSetting("details", "card-wise");
             if (!Directory.Exists(directoryPath))
             {
                 directoryPath = Directory.CreateDirectory(directoryPath).FullName;
             }
-            var serializeJourneyDetails = SerializeJourneyDetailsToJsonString(journeyDetails);
-            string fileName = journeyDetails.Card.Number + "/" + journeyDetails.JourneyId;
-            string fullPath = directoryPath + fileName;
-            File.WriteAllText(fullPath, serializeJourneyDetails);
+
+            directoryPath = Directory.CreateDirectory(directoryPath + number
+                + journeyDate.Month.ToString()
+                + GetWeekNumberOfMonth(journeyDate)).FullName;
+            return directoryPath;
+        }
+
+        private string GetWeekNumberOfMonth(DateTime date)
+        {
+            date = date.Date;
+            DateTime firstMonthDay = new DateTime(date.Year, date.Month, 1);
+            DateTime firstMonthMonday = firstMonthDay.AddDays((DayOfWeek.Monday + 7 - firstMonthDay.DayOfWeek) % 7);
+            if (firstMonthMonday > date)
+            {
+                firstMonthDay = firstMonthDay.AddMonths(-1);
+                firstMonthMonday = firstMonthDay.AddDays((DayOfWeek.Monday + 7 - firstMonthDay.DayOfWeek) % 7);
+            }
+            return ((date - firstMonthMonday).Days / 7 + 1).ToString();
         }
 
         private string GetAssemblyDirectory()
@@ -88,6 +110,7 @@ namespace Assignment.TigerCard.JourneyStore
                 TypeNameAssemblyFormatHandling = TypeNameAssemblyFormatHandling.Simple
             };
         }
+
         private string GetResourceTextFile(string filename)
         {
             using (var stream = GetType().Assembly.GetManifestResourceStream(filename))
