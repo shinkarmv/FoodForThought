@@ -11,7 +11,7 @@ namespace Assignment.TigerCard.Common
         public string StackTrace { get; set; }
         public string InnerException { get; set; }
 
-        protected override List<KeyValuePair<string, object>> GetLogFields()
+        public override IEnumerable<KeyValuePair<string, object>> GetLogFields()
         {
             return new List<KeyValuePair<string, object>>
             {

@@ -10,7 +10,7 @@ namespace Assignment.TigerCard.Common
         public string Category { get; set; }
         public override string Type { get; } = "trace";
 
-        protected override List<KeyValuePair<string, object>> GetLogFields()
+        public override IEnumerable<KeyValuePair<string, object>> GetLogFields()
         {
             return new List<KeyValuePair<string, object>>
             {

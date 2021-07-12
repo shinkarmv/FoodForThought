@@ -28,8 +28,6 @@ namespace Assignment.TigerCard.Common
                 { "id", Id },
                 { "log_time", TimeStamp },
             };
-            var fields = GetLogFields();
-            fields?.ForEach(f => map[f.Key] = f.Value);
 
             // Add attributes
             foreach (var key in _attributes.Keys)
@@ -43,6 +41,6 @@ namespace Assignment.TigerCard.Common
         }
 
         private readonly IDictionary<string, object> _attributes = new Dictionary<string, object>(StringComparer.OrdinalIgnoreCase);
-        protected abstract List<KeyValuePair<string, object>> GetLogFields();
+        
     }
 }
