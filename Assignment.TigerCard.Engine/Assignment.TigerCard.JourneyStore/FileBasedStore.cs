@@ -59,7 +59,7 @@ namespace Assignment.TigerCard.JourneyStore
 
         private string GetDirectoryPath(string number, DateTime journeyDate)
         {
-            var directoryPath = GetAssemblyDirectory() + _configurationProvider.GetSetting("details", "card-wise");
+            var directoryPath = GetAssemblyDirectory() + _configurationProvider.GetSetting("default", "storage_path");
             if (!Directory.Exists(directoryPath))
             {
                 directoryPath = Directory.CreateDirectory(directoryPath).FullName;

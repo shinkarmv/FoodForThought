@@ -1,6 +1,5 @@
 ﻿using Assignment.TigerCard.Contracts;
 using Assignment.TigerCard.Models;
-using System;
 
 namespace Assignment.TigerCard.Engine
 {
