@@ -1,11 +1,9 @@
-﻿using System.Collections.Generic;
-
-namespace Assignment.TigerCard.Contracts
+﻿namespace Assignment.TigerCard.Contracts
 {
     public interface IConfigurationProvider
     {
-        string GetGlobalSetting(string section, string key);
+        string GetSetting(string section, string key);
 
-        T GetGlobalSettingAsDisctionary<T>(string section, string key);
+        T GetSettingAsDictionary<T>(string section, string key);
     }
 }

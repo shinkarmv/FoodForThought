@@ -13,15 +13,15 @@ namespace Assignment.TigerCard.Configuration
             _configuration = configuration;
         }
 
-        public string GetGlobalSetting(string section, string key)
+        public string GetSetting(string section, string key)
         {
-            var value = _configuration.GetSection($"global:{section}:{key}").Value;
+            var value = _configuration.GetSection($"{section}:{key}").Value;
             return value;
         }
 
-        public T GetGlobalSettingAsDisctionary<T>(string section, string key)
+        public T GetSettingAsDictionary<T>(string section, string key)
         {
-            var value = _configuration.GetSection($"global:{section}:{key}").Value;
+            var value = _configuration.GetSection($"{section}:{key}").Value;
             return JsonConvert.DeserializeObject<T>(value);
         }
     }
