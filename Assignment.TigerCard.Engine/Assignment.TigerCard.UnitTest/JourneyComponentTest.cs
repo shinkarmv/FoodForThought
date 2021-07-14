@@ -15,8 +15,8 @@ namespace Assignment.TigerCard.UnitTest
         {
             // Arrange
             var journeyDateTime = Convert.ToDateTime("10-18-2021 14:00");
-            var criteria = GetCriteria(journeyDateTime);
-            var card = GetCard();
+            var criteria = TestDataProvider.GetCriteria(journeyDateTime);
+            var card = TestDataProvider.GetCardModel();
 
             var ruleProcessor = new Mock<IRuleProcessor>();
             ruleProcessor.Setup(x => x.Cap(It.IsAny<List<JourneyDetails>>())).Returns(It.IsAny<bool>());
@@ -41,8 +41,8 @@ namespace Assignment.TigerCard.UnitTest
         {
             // Arrange
             var journeyDateTime = Convert.ToDateTime("10-18-2021 10:00");
-            var criteria = GetCriteria(journeyDateTime);
-            var card = GetCard();
+            var criteria = TestDataProvider.GetCriteria(journeyDateTime);
+            var card = TestDataProvider.GetCardModel();
 
             var ruleProcessor = new Mock<IRuleProcessor>();
             ruleProcessor.Setup(x => x.Cap(It.IsAny<List<JourneyDetails>>())).Returns(It.IsAny<bool>());
@@ -60,63 +60,6 @@ namespace Assignment.TigerCard.UnitTest
             //Assert
             Assert.NotNull(fare);
             Assert.True(fare.Amount == 25);
-        }
-
-        private Models.Card GetCard()
-        {
-            return new Models.Card
-            {
-                Number = "123456789",
-                Name = "John Doe",
-                Balance = new Models.Balance
-                {
-                    Amount = 100000,
-                    Currency = "USD"
-                }
-            };
-        }
-        private Models.Criteria GetCriteria(DateTime journeyDateTime)
-        {
-            return new Models.Criteria
-            {
-                Source = ToSource(),
-                Destination = ToDestination(),
-                StartTime = journeyDateTime,
-            };
-        }
-
-        private static Models.Zone ToSource()
-        {
-            return new Models.Zone
-            {
-                Id = "1",
-                Name = "Bund Garden",
-                Stations = new System.Collections.Generic.List<Models.Station>
-                        {
-                            new Models.Station
-                            {
-                                Code = "011",
-                                Name = "Pune Station"
-                            }
-                        }
-            };
-        }
-
-        private static Models.Zone ToDestination()
-        {
-            return new Models.Zone
-            {
-                Id = "1",
-                Name = "Bund Garden",
-                Stations = new System.Collections.Generic.List<Models.Station>
-                        {
-                            new Models.Station
-                            {
-                                Code = "100",
-                                Name = "Shivaji Nagar"
-                            }
-                        }
-            };
         }
     }
 }

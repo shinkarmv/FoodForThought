@@ -13,7 +13,7 @@ namespace Assignment.TigerCard.UnitTest
         {
             // Arrange
             var journeyDateTime = Convert.ToDateTime("10-18-2021 14:00");
-            var journeyRequest = GetJourneyRequest(journeyDateTime);
+            var journeyRequest = TestDataProvider.GetJourneyRequest(journeyDateTime);
             var journeyComponent = new Mock<IJourneyComponent>();
             journeyComponent.Setup(x => x.Commute(It.IsAny<Models.Criteria>(), It.IsAny<Models.Card>()))
                 .Returns(new Models.Fare { Amount = 20, Description = "Non Peak Fare" });
@@ -32,7 +32,7 @@ namespace Assignment.TigerCard.UnitTest
         {
             // Arrange
             var journeyDateTime = Convert.ToDateTime("10-18-2021 10:00");
-            var journeyRequest = GetJourneyRequest(journeyDateTime);
+            var journeyRequest = TestDataProvider.GetJourneyRequest(journeyDateTime);
             var journeyComponent = new Mock<IJourneyComponent>();
             journeyComponent.Setup(x => x.Commute(It.IsAny<Models.Criteria>(), It.IsAny<Models.Card>()))
                 .Returns(new Models.Fare { Amount = 25, Description = "Non Peak Fare" });
@@ -44,68 +44,6 @@ namespace Assignment.TigerCard.UnitTest
             //Assert
             Assert.NotNull(journeyResponse);
             Assert.True(journeyResponse.Fare.Amount == 25);
-        }
-
-        private JourneyRequest GetJourneyRequest(DateTime journeyDateTime)
-        {
-            return new JourneyRequest
-            {
-                Criteria = ToCriteria(journeyDateTime),
-                TigerCard = new Service.TigerCard
-                {
-                    Number = "123456789",
-                    Name = "John Doe",
-                    Balance = new Balance
-                    {
-                        Amount = 100000,
-                        Currency = "USD"
-                    }
-                }
-            };
-        }
-
-        private static Criteria ToCriteria(DateTime journeyDateTime)
-        {
-            return new Criteria
-            {
-                Source = ToSource(),
-                StartTime = journeyDateTime,
-                Destination = ToDestination(),
-            };
-        }
-
-        private static Zone ToDestination()
-        {
-            return new Zone
-            {
-                Id = "1",
-                Name = "Bund Garden",
-                Stations = new System.Collections.Generic.List<Station>
-                        {
-                            new Station
-                            {
-                                Code = "100",
-                                Name = "Shivaji Nagar"
-                            }
-                        }
-            };
-        }
-
-        private static Zone ToSource()
-        {
-            return new Zone
-            {
-                Id = "1",
-                Name = "Bund Garden",
-                Stations = new System.Collections.Generic.List<Station>
-                        {
-                            new Station
-                            {
-                                Code = "011",
-                                Name = "Pune Station"
-                            }
-                        }
-            };
         }
     }
 }

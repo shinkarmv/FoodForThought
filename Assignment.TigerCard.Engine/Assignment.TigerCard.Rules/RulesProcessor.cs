@@ -16,9 +16,20 @@ namespace Assignment.TigerCard.Rules
         }
         public bool Cap(List<JourneyDetails> journeyList)
         {
-            var capLimits = _configurationProvider.GetSettingAsObject<CapLimits>("default", "caps");
-            var sumOfFare = journeyList.Sum(x => x.Fare.Amount);
-            return capLimits.Weekly >= sumOfFare || capLimits.Daily >= sumOfFare;
+            var capLimits = _configurationProvider.GetSettingAsObject<List<CapLimits>>("default", "caps");
+            foreach (var item in capLimits)
+            {
+                var weeklySumOfFare = journeyList.FindAll(x => x.Criteria.Source.Id == item.BoardingZone
+                                        && x.Criteria.Destination.Id == item.DestinationZone)
+                                        .Sum(x => x.Fare.Amount);
+                var dailySumOfFare = journeyList.FindAll(x => x.Criteria.Source.Id == item.BoardingZone
+                                        && x.Criteria.Destination.Id == item.DestinationZone
+                                        && x.Criteria.StartTime.ToString("mm/dd/yyyy").Equals(DateTime.Now.ToString("mm/dd/yyyy")))
+                                        .Sum(x => x.Fare.Amount);
+
+                return item.Weekly <= weeklySumOfFare || item.Daily <= dailySumOfFare;
+            }
+            return false;
         }
 
         public Fare Peak(DateTime journeyDateTime, Zone boardingZone, Zone destinationZone)
@@ -52,12 +63,20 @@ namespace Assignment.TigerCard.Rules
 
         private bool CheckIfJourneyTimeBelongsToPeakHours(DateTime journeyDateTime)
         {
-            var peakHours = _configurationProvider.GetSettingAsObject<PeakHours>("default", "peak_hours");
-            if(peakHours.Day == journeyDateTime.Day 
-                && peakHours.Window.Start >= journeyDateTime 
-                && peakHours.Window.End <= journeyDateTime)
+            var peakHours = _configurationProvider.GetSettingAsObject<List<PeakHours>>("default", "peak_hours");
+            foreach (var item in peakHours)
             {
-                return true;
+                if (item.DayOfWeek == journeyDateTime.DayOfWeek.ToString())
+                {
+                    foreach (var window in item.Windows)
+                    {
+                        if (Convert.ToInt32(window.Start.ToString("hh")) <= Convert.ToInt32(journeyDateTime.ToString("hh"))
+                            && Convert.ToInt32(window.End.ToString("hh")) >= Convert.ToInt32(journeyDateTime.ToString("hh")))
+                        {
+                            return true;
+                        }
+                    }
+                }
             }
             return false;
         }

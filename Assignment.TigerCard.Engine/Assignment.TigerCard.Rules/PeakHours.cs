@@ -1,8 +1,10 @@
-﻿namespace Assignment.TigerCard.Rules
+﻿using System.Collections.Generic;
+
+namespace Assignment.TigerCard.Rules
 {
     public class PeakHours
     {
-        public int Day { get; set; }
-        public Window Window { get; set; }
+        public string DayOfWeek { get; set; }
+        public List<Window> Windows { get; set; }
     }
 }
