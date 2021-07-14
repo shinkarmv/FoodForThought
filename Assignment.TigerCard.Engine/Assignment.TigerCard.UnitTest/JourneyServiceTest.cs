@@ -12,11 +12,11 @@ namespace Assignment.TigerCard.UnitTest
         public void Journey_CalculateFare_NonPeakHoursFareShouldReturn()
         {
             // Arrange
-            var journeyDateTime = Convert.ToDateTime("18/10/2021:14:00:00");
+            var journeyDateTime = Convert.ToDateTime("10-18-2021 14:00");
             var journeyRequest = GetJourneyRequest(journeyDateTime);
             var journeyComponent = new Mock<IJourneyComponent>();
             journeyComponent.Setup(x => x.Commute(It.IsAny<Models.Criteria>(), It.IsAny<Models.Card>()))
-                .Returns(It.IsAny<Models.Fare>());
+                .Returns(new Models.Fare { Amount = 20, Description = "Non Peak Fare" });
 
             //Act
             var journeyService = new JourneyService(journeyComponent.Object);
@@ -31,11 +31,11 @@ namespace Assignment.TigerCard.UnitTest
         public void Journey_CalculateFare_PeakHoursFareShouldReturn()
         {
             // Arrange
-            var journeyDateTime = Convert.ToDateTime("18/10/2021:10:00:00");
+            var journeyDateTime = Convert.ToDateTime("10-18-2021 10:00");
             var journeyRequest = GetJourneyRequest(journeyDateTime);
             var journeyComponent = new Mock<IJourneyComponent>();
             journeyComponent.Setup(x => x.Commute(It.IsAny<Models.Criteria>(), It.IsAny<Models.Card>()))
-                .Returns(It.IsAny<Models.Fare>());
+                .Returns(new Models.Fare { Amount = 25, Description = "Non Peak Fare" });
 
             //Act
             var journeyService = new JourneyService(journeyComponent.Object);

@@ -25,6 +25,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Assignment.TigerCard.Engine\Assignment.TigerCard.Engine.csproj" />
     <ProjectReference Include="..\Assignment.TigerCard.Service\Assignment.TigerCard.Service.csproj" />
   </ItemGroup>
 

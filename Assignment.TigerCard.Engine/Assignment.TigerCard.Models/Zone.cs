@@ -6,6 +6,6 @@ namespace Assignment.TigerCard.Models
     {
         public string Id { get; set; }
         public string Name { get; set; }
-        public List<Station> Stations { get; set; } 
+        public List<Station> Stations { get; set; } = new List<Station>();
     }
 }
