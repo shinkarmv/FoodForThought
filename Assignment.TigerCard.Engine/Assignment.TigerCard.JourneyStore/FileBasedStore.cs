@@ -24,8 +24,7 @@ namespace Assignment.TigerCard.JourneyStore
 
             foreach (var item in Directory.GetFiles(directoryPath))
             {
-                directoryPath += item;
-                var json = GetResourceTextFile(directoryPath);
+                var json = File.ReadAllText(item);
 
                 var response = JsonConvert.DeserializeObject<JourneyDetails>(json,
                        GetJsonSerializerSettings());
@@ -36,14 +35,15 @@ namespace Assignment.TigerCard.JourneyStore
             return journeyDetailList;
         }
 
-        public void SaveJourneyDetails(Criteria criteria, Fare fare, Card card)
+        public bool SaveJourneyDetails(Criteria criteria, Fare fare, Card card)
         {
             JourneyDetails journeyDetails = PrepareJourneryDetails(criteria, fare, card);
             string directoryPath = GetDirectoryPath(journeyDetails.Card.Number, journeyDetails.Criteria.StartTime);
             var serializeJourneyDetails = SerializeJourneyDetailsToJsonString(journeyDetails);
             string fileName = journeyDetails.JourneyId;
-            string fullPath = directoryPath + fileName;
+            string fullPath = directoryPath + "\\" +  fileName;
             File.WriteAllText(fullPath, serializeJourneyDetails);
+            return true;
         }
 
         private JourneyDetails PrepareJourneryDetails(Criteria criteria, Fare fare, Card card)
@@ -59,15 +59,15 @@ namespace Assignment.TigerCard.JourneyStore
 
         private string GetDirectoryPath(string number, DateTime journeyDate)
         {
-            var directoryPath = GetAssemblyDirectory() + _configurationProvider.GetSetting("default", "storage_path");
+            var directoryPath = GetAssemblyDirectory() + "\\" + _configurationProvider.GetSetting("default", "storage_path");
             if (!Directory.Exists(directoryPath))
             {
                 directoryPath = Directory.CreateDirectory(directoryPath).FullName;
             }
 
-            directoryPath = Directory.CreateDirectory(directoryPath + number
-                + journeyDate.Month.ToString()
-                + GetWeekNumberOfMonth(journeyDate)).FullName;
+            directoryPath = Directory.CreateDirectory(directoryPath + "\\" +  number
+                + "\\" + journeyDate.Month.ToString()
+                + "\\" + GetWeekNumberOfMonth(journeyDate)).FullName;
             return directoryPath;
         }
 
