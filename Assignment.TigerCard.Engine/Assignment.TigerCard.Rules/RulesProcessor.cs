@@ -16,7 +16,7 @@ namespace Assignment.TigerCard.Rules
         }
         public bool Cap(List<JourneyDetails> journeyList)
         {
-            var capLimits = _configurationProvider.GetSettingAsDictionary<CapLimits>("default", "caps");
+            var capLimits = _configurationProvider.GetSettingAsObject<CapLimits>("default", "caps");
             var sumOfFare = journeyList.Sum(x => x.Fare.Amount);
             return capLimits.Weekly >= sumOfFare || capLimits.Daily >= sumOfFare;
         }
@@ -30,7 +30,7 @@ namespace Assignment.TigerCard.Rules
             };
 
             var belongToPeakHours = CheckIfJourneyTimeBelongsToPeakHours(journeyDateTime);
-            var tripFareList = _configurationProvider.GetSettingAsDictionary<List<TripFare>>("default", "trip_fare");
+            var tripFareList = _configurationProvider.GetSettingAsObject<List<TripFare>>("default", "trip_fare");
             
             foreach (var item in tripFareList)
             {
@@ -52,7 +52,7 @@ namespace Assignment.TigerCard.Rules
 
         private bool CheckIfJourneyTimeBelongsToPeakHours(DateTime journeyDateTime)
         {
-            var peakHours = _configurationProvider.GetSettingAsDictionary<PeakHours>("default", "peak_hours");
+            var peakHours = _configurationProvider.GetSettingAsObject<PeakHours>("default", "peak_hours");
             if(peakHours.Day == journeyDateTime.Day 
                 && peakHours.Window.Start >= journeyDateTime 
                 && peakHours.Window.End <= journeyDateTime)

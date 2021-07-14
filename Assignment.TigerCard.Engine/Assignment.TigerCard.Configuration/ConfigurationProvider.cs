@@ -19,7 +19,7 @@ namespace Assignment.TigerCard.Configuration
             return value;
         }
 
-        public T GetSettingAsDictionary<T>(string section, string key)
+        public T GetSettingAsObject<T>(string section, string key)
         {
             var value = _configuration.GetSection($"{section}:{key}").Value;
             return JsonConvert.DeserializeObject<T>(value);
