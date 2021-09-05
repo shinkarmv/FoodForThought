@@ -20,10 +20,16 @@ namespace Assignment.TigerCard.UnitTest
                         x.GetSettingAsObject<List<CapLimits>>(It.IsAny<string>(), It.IsAny<string>()))
                 .Returns(ConfigurationDataProvider.GetCapLimits());
 
+       
+
+            List<ICapProvider> capProviders = new List<ICapProvider> 
+            { new WeeklyCapProvider(), new DailyCapProvider() };
+        
+
             List<JourneyDetails> journeyDetails = TestDataProvider.GetJourneyDetailsForApplicableCap();
 
             //Act
-            var ruleProcessor = new RulesProcessor(configurationProvider.Object);
+            var ruleProcessor = new RulesProcessor(configurationProvider.Object, capProviders);
             bool cap = ruleProcessor.Cap(journeyDetails);
 
             //Assert
@@ -40,9 +46,11 @@ namespace Assignment.TigerCard.UnitTest
                 .Returns(ConfigurationDataProvider.GetCapLimits());
 
             List<JourneyDetails> journeyDetails = TestDataProvider.GetJourneyDetailsForNoCap();
+            List<ICapProvider> capProviders = new List<ICapProvider>
+            { new WeeklyCapProvider(), new DailyCapProvider() };
 
             //Act
-            var ruleProcessor = new RulesProcessor(configurationProvider.Object);
+            var ruleProcessor = new RulesProcessor(configurationProvider.Object, capProviders);
             bool cap = ruleProcessor.Cap(journeyDetails);
 
             //Assert
@@ -62,8 +70,11 @@ namespace Assignment.TigerCard.UnitTest
                         x.GetSettingAsObject<List<PeakHours>>(It.IsAny<string>(), It.IsAny<string>()))
                 .Returns(ConfigurationDataProvider.GetPeakHours());
 
+            List<ICapProvider> capProviders = new List<ICapProvider>
+            { new WeeklyCapProvider(), new DailyCapProvider() };
+
             //Act
-            var ruleProcessor = new RulesProcessor(configurationProvider.Object);
+            var ruleProcessor = new RulesProcessor(configurationProvider.Object, capProviders);
             var fare = ruleProcessor.Peak(Convert.ToDateTime("10-18-2021 10:00"),
                                             TestDataProvider.ToSourceModel(), 
                                             TestDataProvider.ToDestinationModel());
@@ -85,8 +96,11 @@ namespace Assignment.TigerCard.UnitTest
                         x.GetSettingAsObject<List<PeakHours>>(It.IsAny<string>(), It.IsAny<string>()))
                 .Returns(ConfigurationDataProvider.GetPeakHours());
 
+            List<ICapProvider> capProviders = new List<ICapProvider>
+            { new WeeklyCapProvider(), new DailyCapProvider() };
+
             //Act
-            var ruleProcessor = new RulesProcessor(configurationProvider.Object);
+            var ruleProcessor = new RulesProcessor(configurationProvider.Object, capProviders);
             var fare = ruleProcessor.Peak(Convert.ToDateTime("10-18-2021 14:00"),
                                             TestDataProvider.ToSourceModel(),
                                             TestDataProvider.ToDestinationModel());

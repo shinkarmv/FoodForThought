@@ -17,7 +17,7 @@ namespace Assignment.TigerCard.UnitTest
             var configurationProvider = new Mock<IConfigurationProvider>();
             configurationProvider.Setup(x =>
                         x.GetSetting(It.IsAny<string>(), It.IsAny<string>()))
-                .Returns("card-wise");
+                .Returns("card-wise-journey-store");
 
             //Act
             var fileBasedStore = new FileBasedStore(configurationProvider.Object);
@@ -36,7 +36,7 @@ namespace Assignment.TigerCard.UnitTest
             var configurationProvider = new Mock<IConfigurationProvider>();
             configurationProvider.Setup(x =>
                         x.GetSetting(It.IsAny<string>(), It.IsAny<string>()))
-                .Returns("card-wise");
+                .Returns("card-wise-journey-store");
 
             //Act
             var fileBasedStore = new FileBasedStore(configurationProvider.Object);

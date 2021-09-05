@@ -9,27 +9,21 @@ namespace Assignment.TigerCard.Rules
     public class RulesProcessor : IRuleProcessor
     {
         private readonly IConfigurationProvider _configurationProvider;
+        private readonly List<ICapProvider> _capProvider;
 
-        public RulesProcessor(IConfigurationProvider configurationProvider)
+        public RulesProcessor(IConfigurationProvider configurationProvider, List<ICapProvider> capProvider)
         {
             _configurationProvider = configurationProvider;
+            _capProvider = capProvider;
         }
         public bool Cap(List<JourneyDetails> journeyList)
         {
             var capLimits = _configurationProvider.GetSettingAsObject<List<CapLimits>>("default", "caps");
-            foreach (var item in capLimits)
-            {
-                var weeklySumOfFare = journeyList.FindAll(x => x.Criteria.Source.Id == item.BoardingZone
-                                        && x.Criteria.Destination.Id == item.DestinationZone)
-                                        .Sum(x => x.Fare.Amount);
-                var dailySumOfFare = journeyList.FindAll(x => x.Criteria.Source.Id == item.BoardingZone
-                                        && x.Criteria.Destination.Id == item.DestinationZone
-                                        && x.Criteria.StartTime.ToString("mm/dd/yyyy").Equals(DateTime.Now.ToString("mm/dd/yyyy")))
-                                        .Sum(x => x.Fare.Amount);
 
-                return item.Weekly <= weeklySumOfFare || item.Daily <= dailySumOfFare;
-            }
-            return false;
+            return capLimits.Any(capLimit => 
+            {
+               return _capProvider.Any(x => x.IsCapApplicable(journeyList, capLimit));
+            });
         }
 
         public Fare Peak(DateTime journeyDateTime, Zone boardingZone, Zone destinationZone)

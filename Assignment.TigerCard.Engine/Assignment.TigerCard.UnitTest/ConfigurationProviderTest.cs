@@ -12,7 +12,7 @@ namespace Assignment.TigerCard.UnitTest
         {
             //Arrange
             var configurationSection = new Mock<IConfigurationSection>();
-            configurationSection.Setup(x => x.Value).Returns("card-wise");
+            configurationSection.Setup(x => x.Value).Returns("card-wise-journey-store");
             var configuration = new Mock<IConfiguration>();
 
             configuration.Setup(x => x.GetSection($"{"default"}:{"storage_path"}"))
@@ -24,7 +24,7 @@ namespace Assignment.TigerCard.UnitTest
 
             //Assert
             Assert.NotNull(settings);
-            Assert.True(settings == "card-wise");
+            Assert.True(settings == "card-wise-journey-store");
         }
 
         [Fact]
