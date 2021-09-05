@@ -1,0 +1,94 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30523.141
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Assignment.TigerCard.Engine", "Assignment.TigerCard.Engine\Assignment.TigerCard.Engine.csproj", "{B5398D19-CB35-4C92-9C7B-DCE1FFAFB29C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Assignment.TigerCard.Contracts", "Assignment.TigerCard.Contracts\Assignment.TigerCard.Contracts.csproj", "{F58EE40A-35FF-4B77-AF7A-6DB2AE0D008C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Assignment.TigerCard.Models", "Assignment.TigerCard.Models\Assignment.TigerCard.Models.csproj", "{041D5D22-13E5-4246-B142-80AA0D77E2F7}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Assignment.TigerCard.Service", "Assignment.TigerCard.Service\Assignment.TigerCard.Service.csproj", "{76939A7B-C580-406C-B322-7868905DB9F8}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Assignment.TigerCard.Configuration", "Assignment.TigerCard.Configuration\Assignment.TigerCard.Configuration.csproj", "{FBFC8439-32C7-4DF7-ABAC-F52E1A73E6F7}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Assignment.TigerCard.Rules", "Assignment.TigerCard.Rules\Assignment.TigerCard.Rules.csproj", "{BC2453F9-404A-4AD3-9DE0-B08C883BD046}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Assignment.TigerCard.JourneyStore", "Assignment.TigerCard.JourneyStore\Assignment.TigerCard.JourneyStore.csproj", "{298FAC50-459F-4E71-8E0D-C2CCCFBF9442}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2. Service", "2. Service", "{D7065140-DD92-461C-9F25-D1BE53F09F18}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3. Core", "3. Core", "{697C2A5E-3F49-44FE-BE65-531F8B64B566}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4. Providers", "4. Providers", "{74C29F07-D4FE-4BA2-8C8E-13100C8E5C13}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1. Host", "1. Host", "{4C57F7E4-3BF0-4299-8EC3-1E4F08824B65}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5. Test", "5. Test", "{C96203F3-3CBC-4158-BF77-7EEFB7B2E368}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Assignment.TigerCard.Common", "Assignment.TigerCard.Common\Assignment.TigerCard.Common.csproj", "{66D290C3-DDD1-4CE3-AAAE-832E69DC3C2C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assignment.TigerCard.UnitTest", "Assignment.TigerCard.UnitTest\Assignment.TigerCard.UnitTest.csproj", "{D14DC7AC-07C3-4E94-AC76-52465526A200}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B5398D19-CB35-4C92-9C7B-DCE1FFAFB29C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B5398D19-CB35-4C92-9C7B-DCE1FFAFB29C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B5398D19-CB35-4C92-9C7B-DCE1FFAFB29C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B5398D19-CB35-4C92-9C7B-DCE1FFAFB29C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F58EE40A-35FF-4B77-AF7A-6DB2AE0D008C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F58EE40A-35FF-4B77-AF7A-6DB2AE0D008C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F58EE40A-35FF-4B77-AF7A-6DB2AE0D008C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F58EE40A-35FF-4B77-AF7A-6DB2AE0D008C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{041D5D22-13E5-4246-B142-80AA0D77E2F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{041D5D22-13E5-4246-B142-80AA0D77E2F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{041D5D22-13E5-4246-B142-80AA0D77E2F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{041D5D22-13E5-4246-B142-80AA0D77E2F7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{76939A7B-C580-406C-B322-7868905DB9F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{76939A7B-C580-406C-B322-7868905DB9F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{76939A7B-C580-406C-B322-7868905DB9F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{76939A7B-C580-406C-B322-7868905DB9F8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FBFC8439-32C7-4DF7-ABAC-F52E1A73E6F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FBFC8439-32C7-4DF7-ABAC-F52E1A73E6F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FBFC8439-32C7-4DF7-ABAC-F52E1A73E6F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FBFC8439-32C7-4DF7-ABAC-F52E1A73E6F7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BC2453F9-404A-4AD3-9DE0-B08C883BD046}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC2453F9-404A-4AD3-9DE0-B08C883BD046}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC2453F9-404A-4AD3-9DE0-B08C883BD046}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC2453F9-404A-4AD3-9DE0-B08C883BD046}.Release|Any CPU.Build.0 = Release|Any CPU
+		{298FAC50-459F-4E71-8E0D-C2CCCFBF9442}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{298FAC50-459F-4E71-8E0D-C2CCCFBF9442}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{298FAC50-459F-4E71-8E0D-C2CCCFBF9442}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{298FAC50-459F-4E71-8E0D-C2CCCFBF9442}.Release|Any CPU.Build.0 = Release|Any CPU
+		{66D290C3-DDD1-4CE3-AAAE-832E69DC3C2C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{66D290C3-DDD1-4CE3-AAAE-832E69DC3C2C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{66D290C3-DDD1-4CE3-AAAE-832E69DC3C2C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{66D290C3-DDD1-4CE3-AAAE-832E69DC3C2C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D14DC7AC-07C3-4E94-AC76-52465526A200}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D14DC7AC-07C3-4E94-AC76-52465526A200}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D14DC7AC-07C3-4E94-AC76-52465526A200}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D14DC7AC-07C3-4E94-AC76-52465526A200}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{B5398D19-CB35-4C92-9C7B-DCE1FFAFB29C} = {697C2A5E-3F49-44FE-BE65-531F8B64B566}
+		{F58EE40A-35FF-4B77-AF7A-6DB2AE0D008C} = {697C2A5E-3F49-44FE-BE65-531F8B64B566}
+		{041D5D22-13E5-4246-B142-80AA0D77E2F7} = {697C2A5E-3F49-44FE-BE65-531F8B64B566}
+		{76939A7B-C580-406C-B322-7868905DB9F8} = {D7065140-DD92-461C-9F25-D1BE53F09F18}
+		{FBFC8439-32C7-4DF7-ABAC-F52E1A73E6F7} = {74C29F07-D4FE-4BA2-8C8E-13100C8E5C13}
+		{BC2453F9-404A-4AD3-9DE0-B08C883BD046} = {74C29F07-D4FE-4BA2-8C8E-13100C8E5C13}
+		{298FAC50-459F-4E71-8E0D-C2CCCFBF9442} = {74C29F07-D4FE-4BA2-8C8E-13100C8E5C13}
+		{66D290C3-DDD1-4CE3-AAAE-832E69DC3C2C} = {74C29F07-D4FE-4BA2-8C8E-13100C8E5C13}
+		{D14DC7AC-07C3-4E94-AC76-52465526A200} = {C96203F3-3CBC-4158-BF77-7EEFB7B2E368}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {50B8130D-31F3-424C-9680-F3F5DDB4AA39}
+	EndGlobalSection
+EndGlobal
